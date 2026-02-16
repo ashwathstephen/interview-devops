@@ -8,7 +8,7 @@ on:
 
 jobs:
   docker:
-    uses: ./.github/workflows/docker-build.yml
+    uses: ./.github/workflows/docker-push.yaml
     with:
       image-name: interview-go-app
       registry: us-docker.pkg.dev/devops-interview-487605/docker-repo

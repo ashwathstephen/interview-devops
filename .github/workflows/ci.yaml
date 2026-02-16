@@ -10,7 +10,10 @@ jobs:
   docker:
     uses: ./.github/workflows/docker-build.yml
     with:
-      image-name: interview-go-application
+      image-name: interview-go-app
       registry: us-docker.pkg.dev/devops-interview-487605/docker-repo
-      registry-username: _json_key
-      registry-password: ${{secrets.GCP_SECRET}}
+      dockerfile: Dockerfile
+      context: .
+      push: true
+      platforms: linux/amd64
+    secrets: inherit

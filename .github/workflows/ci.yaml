@@ -20,4 +20,5 @@ jobs:
       context: .
       push: true
       platforms: linux/amd64
-    secrets: inherit
+    secrets:
+      gcp-service-account-key: ${{ secrets.GCP_SECRET }}

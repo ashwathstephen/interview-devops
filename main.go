@@ -9,6 +9,8 @@ import (
 	"time"
 
 	"devops-interview/database"
+
+	"github.com/joho/godotenv"
 )
 
 const (
@@ -27,6 +29,9 @@ type healthResponse struct {
 }
 
 func main() {
+	// Load .env file if it exists (ignore error if file doesn't exist)
+	_ = godotenv.Load()
+
 	httpAddr := getEnv("HTTP_ADDR", defaultHTTPAddr)
 	pgConnStr := getEnv("DATABASE_URL", defaultPGConnStr)
 	redisAddr := getEnv("REDIS_ADDR", defaultRedisAddr)

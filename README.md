@@ -61,16 +61,3 @@ Example response (degraded):
   }
 }
 ```
-
-## Quick start with Docker
-
-```bash
-# Start PostgreSQL and Redis
-docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:16-alpine
-docker run -d --name redis -p 6379:6379 redis:7-alpine
-
-# Run the app
-go run .
-```
-
-Then: `curl http://localhost:8080/health`

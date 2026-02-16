@@ -8,6 +8,9 @@ on:
 
 jobs:
   docker:
+    permissions:
+      contents: read
+      packages: write
     uses: ./.github/workflows/docker-push.yaml
     with:
       image-name: interview-go-app

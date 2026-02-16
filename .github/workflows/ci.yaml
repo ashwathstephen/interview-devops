@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  docker:
+    uses: ./.github/workflows/docker-build.yml
+    with:
+      image-name: interview-go-application
+      registry: us-docker.pkg.dev/devops-interview-487605/docker-repo
+      registry-username: _json_key
+      registry-password: ${{secrets.GCP_SECRET}}
